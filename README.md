@@ -1,1 +1,1 @@
-# stat401
+# STAT 401 - Data Analysis
