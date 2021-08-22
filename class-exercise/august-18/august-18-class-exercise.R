@@ -1,4 +1,4 @@
-# Author: Emmanuel Ndubuisi, Date: 08/18/2021
+# Author: Emmanuel Ndubuisi, Date: 08/18/2021, Purpose: Calculate T-test
 
 x = rnorm(10)
 y = rnorm(10)
