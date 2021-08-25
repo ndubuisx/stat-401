@@ -17,4 +17,5 @@ ggscatter(my_data, x = "mpg", y = "wt", add = "reg.line", conf.int = TRUE, cor.c
 
 # generates correlation value without plotting
 # my_data$wt => the dollar sign is used to select the column name (my_data$wt = weight column, my_data$mpg = mpg column)
+# in the output, 'cor' is the correlation value
 res = cor.test(my_data$wt, my_data$mpg, method = "pearson")
