@@ -1,4 +1,4 @@
-# Author: Emmanuel Ndubuisi, Date: August 30, 2021, Purpose: Calculate one-way ANOVA in R.
+# Author: Emmanuel Ndubuisi, Date: September 1, 2021, Purpose: Calculate one-way ANOVA on sample data.
 
 # load dplyr library
 library(dplyr)
