@@ -23,3 +23,9 @@ df %>% group_by(poison) %>% summarise(count_poison = n(), mean_time = mean(time,
 # plotting the data using ggplot2
 install.packages("ggplot2")
 library(ggplot2)
+
+ggplot(df, aes(x = poison, y = time, fill = poison)) + geom_boxplot() + geom_jitter(shape = 15, color = "steelblue", position = position_jitter(0.21)) + theme_classic()
+
+anova_one_way <- aov(time~poison, data = df)
+
+summary(anova_one_way)
