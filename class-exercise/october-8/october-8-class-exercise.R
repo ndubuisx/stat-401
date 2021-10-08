@@ -10,6 +10,8 @@ y <- c(1, 2, 9, 3, 4, 5, 7, 2, 2, 8)
 # create model using lm()
 relation <- lm(y~x)
 
+print(relation)
+
 # Output -->
 
 # Call:
