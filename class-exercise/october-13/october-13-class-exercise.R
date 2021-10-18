@@ -21,4 +21,4 @@ print(relation)
 # (Intercept)            x  
 #   11.79499     -0.04873  
 
-# y/Happyness = 11.79499 + (-0.04873 * x/time)
+# y/happiness = 11.79499 + (-0.04873 * x/time)
