@@ -8,7 +8,7 @@ data <- data %>% na_if("") %>% na.omit
 
 glimpse(data)
 
-ggscatter(data, x = "cigarette_sales", y = "new_cases", add = "reg.line", conf.int = TRUE, cor.coef = TRUE, cor.method = "spearman", xlab = "Cigarettes Sales per Adult per Day", ylab = "Lung Cancer Rate per 100,000 people")
+ggscatter(data, x = "cigarette_sales", y = "new_cases", add = "reg.line", conf.int = TRUE, cor.coef = TRUE, cor.method = "spearman", xlab = "Cigarettes Sales per Adult per Day", ylab = "Lung Cancer Rate per 100,000 People")
 
 res = cor.test(data$cigarette_sales, data$new_cases, method = "spearman")
 
