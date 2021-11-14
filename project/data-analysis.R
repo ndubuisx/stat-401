@@ -1,20 +1,25 @@
+# load required libraries
 library(ggplot2)
 library(dplyr)
 library(patchwork)
 library(hrbrthemes)
 theme_set(theme_bw())
 
+# path to dataset
 PATH <- "https://raw.githubusercontent.com/ndubuisx/stat-401/main/project/cigarette-cancer.csv"
 data <- read.csv(PATH)
 
 # value used to transform the data
 coeff <- 6
 
+# color for data plot line
 cigarette_sales_color <- "#0047AB"
 death_rate_color <- "#D22B2B"
 
+# preview data set
 glimpse(data)
 
+# plot data frame
 ggplot(data, aes(x=year)) + 
 geom_line( aes(y=cigarette_sales), size=1, color=cigarette_sales_color) + 
 geom_line( aes(y=death_rate / coeff), size=1, color=death_rate_color) +
