@@ -1,1 +1,2 @@
-https://www.cancer.org/research/cancer-facts-statistics/all-cancer-facts-figures/cancer-facts-figures-2015.html
+* Cancer facts and statistics 2015: Research. American Cancer Society. (n.d.). Retrieved November 15, 2021, from https://www.cancer.org/research/cancer-facts-statistics/all-cancer-facts-figures/cancer-facts-figures-2015.html. 
+* Sales of cigarettes per adult per day. Our World in Data. (n.d.). Retrieved November 15, 2021, from https://ourworldindata.org/grapher/sales-of-cigarettes-per-adult-per-day. 
