@@ -1,8 +1,6 @@
 # load libraries
 library(ggplot2)
 library(dplyr)
-library(patchwork)
-library(hrbrthemes)
 theme_set(theme_bw())
 
 # path to dataset
@@ -13,29 +11,35 @@ data <- read.csv(PATH)
 coeff_men <- 10
 coeff_women <- 5
 
-cigarette_sales_color <- "#0047AB"
-mortality_rate_men_color <- "#D22B2B"
-
-cigarette_sales_color <- "#0047AB"
-mortality_rate_women_color <- "#D22B2B"
+blue <- "#0047AB"
+red <- "#D22B2B"
 
 # preview data frame
 glimpse(data)
 
-# plot data frame for men
+# plot cigarrete sales and male lung cancer mortality rate
 ggplot(data, aes(x=year)) + 
   xlab("Year") +
-  geom_line(aes(y=cigarette_sales), size=1, color=cigarette_sales_color) + 
-  geom_line(aes(y=mortality_rate_men / coeff_men), size=1, color=mortality_rate_men_color) +
+  geom_line(aes(y=cigarette_sales), size=1, color=blue) + 
+  geom_line(aes(y=mortality_rate_men / coeff_men), size=1, color=red) +
   scale_y_continuous(name = "Cigarettes Sales per Adult per Day", sec.axis = sec_axis(~.*coeff_men, name="Lung Cancer Mortality Rate per 100,000 Males")) + 
-  theme(axis.title.y = element_text(color = cigarette_sales_color, size=13), axis.title.y.right = element_text(color = mortality_rate_men_color, size=13)) +
+  theme(axis.title.y = element_text(color = blue, size=13), axis.title.y.right = element_text(color = red, size=13)) +
   ggtitle("Cigarette Sales and Male Lung Cancer Mortality Rate in the United States.")
 
-# plot data frame for women
+# plot cigarrete sales and female lung cancer mortality rate
 ggplot(data, aes(x=year)) + 
   xlab("Year") +
-  geom_line(aes(y=cigarette_sales), size=1, color=cigarette_sales_color) + 
-  geom_line(aes(y=mortality_rate_women / coeff_women), size=1, color=mortality_rate_women_color) +
+  geom_line(aes(y=cigarette_sales), size=1, color=blue) + 
+  geom_line(aes(y=mortality_rate_women / coeff_women), size=1, color=red) +
   scale_y_continuous(name = "Cigarettes Sales per Adult per Day", sec.axis = sec_axis(~.*coeff_women, name="Lung Cancer Mortality Rate per 100,000 Females")) + 
-  theme(axis.title.y = element_text(color = cigarette_sales_color, size=13), axis.title.y.right = element_text(color = mortality_rate_women_color, size=13)) +
+  theme(axis.title.y = element_text(color = blue, size=13), axis.title.y.right = element_text(color = red, size=13)) +
   ggtitle("Cigarette Sales and Female Lung Cancer Mortality Rate in the United States.")
+
+# plot lung cancer mortality rate in males and females
+ggplot(data, aes(x=year)) + 
+  xlab("Year") +
+  geom_line(aes(y=mortality_rate_men), size=1, color=blue) + 
+  geom_line(aes(y=mortality_rate_women), size=1, color=red) +
+  scale_y_continuous(name = "Lung Cancer Mortality Rate per 100,000 Males", sec.axis = sec_axis(~.*1, name="Lung Cancer Mortality Rate per 100,000 Females")) + 
+  theme(axis.title.y = element_text(color = blue, size=13), axis.title.y.right = element_text(color = red, size=13)) +
+  ggtitle("Lung Cancer Mortality Rate per 100,000 Males and Females in the United States.")
